@@ -1,1 +1,4 @@
 run './pbm.py out' to play the contents of out.
+
+Scroll wheel zooms.
+Mouse pans.
