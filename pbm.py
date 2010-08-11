@@ -57,11 +57,11 @@ class PBM:
                         self.paused = not self.paused
                 if event.type == MOUSEBUTTONDOWN:
                     if event.button == 4:
-                        zoom *= Z_IN
-                        cam *= Z_IN
+                        self.zoom *= self.Z_IN
+                        self.cam *= self.Z_IN
                     if event.button == 5:
-                        zoom *= Z_OUT
-                        cam *= Z_OUT
+                        self.zoom *= self.Z_OUT
+                        self.cam *= self.Z_OUT
             m = pygame.mouse.get_rel()
             self.cam += apply(complex, m)
             if not (self.paused or forever): break
