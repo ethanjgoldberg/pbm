@@ -5,7 +5,7 @@ import pygame.gfxdraw
 from pygame.locals import *
 import fileinput, math
 
-COLOR = [(0,0,255),
+COLOR = [(255,255,0),
          (0,255,0),
          (255,0,0)]
 
@@ -40,7 +40,7 @@ class PBM:
         r *= self.zoom
         p -= self.cam - self.half
         if f:
-            pygame.gfxdraw.filled_circle(self.screen, int(p.real), int(p.imag), int(r), c)
+            pygame.gfxdraw.filled_circle(self.screen, int(p.real), int(p.imag), max(int(r), 4), c)
         else:
             pygame.gfxdraw.circle(self.screen, int(p.real), int(p.imag), int(r), c)
             pygame.gfxdraw.pie(self.screen, int(p.real), int(p.imag), int(r), d - 10, d + 10, c)
