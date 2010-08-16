@@ -70,14 +70,14 @@ class PBM:
         for line in fileinput.input():
             self.DoStuff()
             if line[0] == "\n":
-                pygame.gfxdraw.circle(self.screen, self.half.real, self.half.imag, 4, (200,200,200,100))
+                pygame.gfxdraw.circle(self.screen, int(self.half.real), int(self.half.imag), 4, (200,200,200,100))
                 pygame.display.flip()
                 self.screen.fill((0,0,0))
                 self.clock.tick(self.FPS)
             elif line[0] == "#":
                 pass
             elif line[0] == ">":
-                print line
+                print line,
             else:
                 apply(self.Draw, [eval(x) for x in line.split()])
 
